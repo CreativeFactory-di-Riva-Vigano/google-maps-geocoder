@@ -1,0 +1,19 @@
+# Google Maps Geocoder
+
+## Install
+
+```bash
+composer require creativefactory/google-maps-geocoder
+```
+
+## How to use
+```php
+$geocoder = new Geocoder('XXXXXXXXX-My-Google-Maps-Platform-API-Key-XXXXXXXXX', 'en');
+$location = $geocoder->query('Duomo, Milano, Italy');
+$latLng = $location->getCoordinates();
+echo 'Lat: ' . $latLng['lat'] . ' / Lng: ' . $latLng['lng'];
+echo 'ZIP code: ' . $location->getPostalCode();
+```
+
+## License
+MIT
