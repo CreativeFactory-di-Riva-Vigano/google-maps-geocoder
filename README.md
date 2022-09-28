@@ -1,7 +1,10 @@
 # Google Maps Geocoder
+A super simple geocoding class that use Google Maps Platform to do the magic.\
+You only need to obtain a Google Maps Platform API (https://developers.google.com/maps).\
+Optionally, the class can leverage a PRS-6 cache implementation in order to query the Maps Platform only when necessary.
+
 
 ## Install
-
 ```bash
 composer require creativefactory/google-maps-geocoder
 ```
