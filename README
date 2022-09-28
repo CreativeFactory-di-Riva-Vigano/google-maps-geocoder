@@ -1,0 +1,12 @@
+# Google Maps Geocoder
+
+## Install
+
+```bash
+composer require creativefactory/google-maps-geocoder
+```
+
+## How to use
+
+## License
+MIT
