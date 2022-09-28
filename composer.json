@@ -1,20 +1,27 @@
 {
-    "name": "creativefactoryrv/google-maps-geocoder",
-    "description": "Query Google Maps Platform API to get geocode information",
-    "type": "library",
-    "license": "MIT",
-    "minimum-stability": "stable",
-    "require": {
-        "psr/cache": "^1.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "CreativeFactoryRV\\GoogleMapsGeocoder\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Daniele Viganò"
-        }
-    ]
+  "name": "creativefactoryrv/google-maps-geocoder",
+  "description": "Query Google Maps Platform API to get geocode information",
+  "keywords": [
+    "Google Maps Platform",
+    "geocoder",
+    "geocoding",
+    "Google Maps"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.0",
+    "psr/cache": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "CreativeFactoryRV\\GoogleMapsGeocoder\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Daniele Viganò"
+    }
+  ]
 }
