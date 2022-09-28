@@ -9,15 +9,19 @@ class Geocoder {
     /** @var string */
     private $apiKey;
 
+    /**
+     * @param $apiKey Google Maps Platform API key obtained from Google.
+     * @param $language Results langage.
+     */
     public function __construct($apiKey, $language = 'en') {
         $this->apiKey = $apiKey;
         $this->language = $language;
     }
 
     /**
-     * @param $address The address we want to be geocoded
-     * @return Location Location object istantiated with the information retrieved from Google Maps Platform
-     * @throws \Exception If something goes wrong, it throws an exception with information about the problem
+     * @param $address The address we want to be geocoded.
+     * @return Location Location object istantiated with the information retrieved from Google Maps Platform.
+     * @throws \Exception If something goes wrong, it throws an exception with information about the problem.
      */
     public function query($address): Location {
         $url = 'https://maps.google.com/maps/api/geocode/json?address=' . urlencode($address) . '&key=' . $this->apiKey . '&language=' . $this->language;
