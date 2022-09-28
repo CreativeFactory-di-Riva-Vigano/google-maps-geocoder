@@ -6,7 +6,7 @@ Optionally, the class can leverage a PRS-6 cache implementation in order to quer
 
 ## Install
 ```bash
-composer require creativefactory/google-maps-geocoder
+composer require creativefactoryrv/google-maps-geocoder
 ```
 
 ## How to use
