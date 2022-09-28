@@ -12,6 +12,8 @@ $geocoder = new Geocoder($apiKey, $language);
 try {
     $location = $geocoder->query('CreativeFactory, Casatenovo');
 
+    $latLng = $location->getCoordinates();
+    echo 'Lat: ' . $latLng['lat'] . ' / Lng: ' . $latLng['lng'] . '<br>';
     echo $location->getCountry() . '<br>';
     echo $location->getLocality() . '<br>';
     echo $location->getPostalCode() . '<br>';
@@ -21,8 +23,6 @@ try {
     echo $location->getAdministrativeAreaLevel2() . '<br>';
     echo $location->getAdministrativeAreaLevel3() . '<br>';
     echo $location->getFormattedAddress() . '<br>';
-    $latLng = $location->getCoordinates();
-    echo 'Lat: ' . $latLng['lat'] . ' / Lng: ' . $latLng['lng'] . '<br>';
     echo $location->format('%R %N<br>%P %L (%a2)<br>%C');
 }
 catch (Exception $e) {
