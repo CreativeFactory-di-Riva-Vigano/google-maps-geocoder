@@ -1,6 +1,6 @@
 {
   "name": "creativefactoryrv/google-maps-geocoder",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Query Google Maps Platform API to get geocode information",
   "keywords": [
     "Google Maps Platform",
