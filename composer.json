@@ -1,7 +1,7 @@
 {
   "name": "creativefactoryrv/google-maps-geocoder",
   "version": "1.0.3",
-  "description": "Simple and lightweight geocoder using Google Maps Platform API. Optionally, it can use a PSR cache.",
+  "description": "Simple and lightweight geocoder that uses the Google Maps Platform API. It can optionally use a PSR cache.",
   "keywords": [
     "Google Maps Platform",
     "geocoder",
