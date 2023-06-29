@@ -1,12 +1,14 @@
 {
   "name": "creativefactoryrv/google-maps-geocoder",
   "version": "1.0.3",
-  "description": "Query Google Maps Platform API to get geocode information",
+  "description": "Simple and lightweight geocoder that uses the Google Maps Platform API. It can optionally use a PSR cache.",
   "keywords": [
     "Google Maps Platform",
     "geocoder",
     "geocoding",
-    "Google Maps"
+    "Google Maps",
+    "cache",
+    "caching"
   ],
   "type": "library",
   "license": "MIT",
