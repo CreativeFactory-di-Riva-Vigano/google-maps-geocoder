@@ -39,6 +39,10 @@ class Location {
         return $this->dataDecoded;
     }
 
+    /**
+     * Returns an array with the desired values.
+     * @return array
+     */
     public function getCoordinates() {
         $lat = $this->dataDecoded['results'][0]['geometry']['location']['lat'];
         $lng = $this->dataDecoded['results'][0]['geometry']['location']['lng'];
