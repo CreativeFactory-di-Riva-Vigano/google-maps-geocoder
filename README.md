@@ -27,7 +27,7 @@ $myJSONString = $location->getRaw();
 ```
 
 ### Get an array
-Returns values as an associative array.
+Return the Google Maps Platform API response as an associative array.
 ```php
 $geocoder = new Geocoder('XXXXXXXXX-My-Google-Maps-Platform-API-Key-XXXXXXXXX', 'en');
 $location = $geocoder->query('Duomo, Milano, Italy');
