@@ -9,7 +9,7 @@ class Location {
     private $dataDecoded;
 
     /**
-     * @param $response Raw response as returned by Google Masp Platform API.
+     * @param string $response Raw response as returned by Google Masp Platform API.
      * @throws \Exception
      */
     public function __construct($response) {
@@ -43,7 +43,7 @@ class Location {
      * Returns an array with the desired values.
      * @return array
      */
-    public function getCoordinates() {
+    public function getCoordinates(): array {
         $lat = $this->dataDecoded['results'][0]['geometry']['location']['lat'];
         $lng = $this->dataDecoded['results'][0]['geometry']['location']['lng'];
         return [
@@ -56,73 +56,73 @@ class Location {
 
     /**
      * Returns the country value.
-     * @return string|null
+     * @return string
      */
-    public function getCountry() {
+    public function getCountry(): string {
         return $this->getAddressComponent('country', self::NAME_LONG);
     }
 
     /**
      * Returns the city or locality value.
-     * @return string|null
+     * @return string
      */
-    public function getLocality() {
+    public function getLocality(): string {
         return $this->getAddressComponent('locality', self::NAME_LONG);
     }
 
     /**
      * Returns the postal code or zipcode value.
-     * @return string|null
+     * @return string
      */
-    public function getPostalCode() {
+    public function getPostalCode(): string {
         return $this->getAddressComponent('postal_code', self::NAME_LONG);
     }
 
     /**
      * Returns the street name (called "route" by Google).
-     * @return string|null
+     * @return string
      */
-    public function getRoute() {
+    public function getRoute(): string {
         return $this->getAddressComponent('route', self::NAME_LONG);
     }
 
     /**
      * Returns the street number value.
-     * @return string|null
+     * @return string
      */
-    public function getStreetNumber() {
+    public function getStreetNumber(): string {
         return $this->getAddressComponent('street_number', self::NAME_LONG);
     }
 
     /**
      * Returns the administrative levels 1 value.
-     * @return string|null
+     * @return string
      */
-    public function getAdministrativeAreaLevel1() {
+    public function getAdministrativeAreaLevel1(): string {
         return $this->getAddressComponent('administrative_area_level_1', self::NAME_LONG);
     }
 
     /**
      * Returns the administrative levels 2 value.
-     * @return string|null
+     * @return string
      */
-    public function getAdministrativeAreaLevel2() {
+    public function getAdministrativeAreaLevel2(): string {
         return $this->getAddressComponent('administrative_area_level_2', self::NAME_LONG);
     }
 
     /**
      * Returns the administrative levels 3 value.
-     * @return string|null
+     * @return string
      */
-    public function getAdministrativeAreaLevel3() {
+    public function getAdministrativeAreaLevel3(): string {
         return $this->getAddressComponent('administrative_area_level_3', self::NAME_LONG);
     }
 
     /**
      * Returns a string representing the address (called "formatted_address" by Google).
-     * @return string|null
+     * @return string
      */
-    public function getFormattedAddress() {
+    public function getFormattedAddress(): string {
         return $this->dataDecoded['results'][0]['formatted_address'];
     }
 
@@ -168,5 +168,7 @@ class Location {
                 return $v[$valueType];
             }
         }
+
+        return '';
     }
 }

@@ -6,19 +6,19 @@ use Psr\Cache\CacheItemPoolInterface;
 
 class Geocoder {
     /** @var string */
-    private $language;
+    private string $language;
 
     /** @var string */
-    private $apiKey;
+    private string $apiKey;
 
-    private $cacheAdapter;
+    private ?CacheItemPoolInterface $cacheAdapter;
 
     /**
      * @param string $apiKey Google Maps Platform API key obtained from Google.
      * @param string $language Results langage.
      * @param CacheItemPoolInterface|null $cacheAdapter PSR-6 cache adapter implementing CacheItemPoolInterface.
      */
-    public function __construct(string $apiKey, string $language = 'en', CacheItemPoolInterface $cacheAdapter = null) {
+    public function __construct(string $apiKey, string $language = 'en', ?CacheItemPoolInterface $cacheAdapter = null) {
         $this->apiKey = $apiKey;
         $this->language = $language;
         $this->cacheAdapter = $cacheAdapter;
@@ -30,6 +30,7 @@ class Geocoder {
      * @throws \Exception If something goes wrong, it throws an exception with information about the problem.
      */
     public function query(string $address): Location {
+        $doCaching = false;
         if ( $this->cacheAdapter != null ) {
             $cacheIndex = md5(__CLASS__ . __FUNCTION__ . '|' . serialize(func_get_args()));
             try {
