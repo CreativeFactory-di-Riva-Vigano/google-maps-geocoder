@@ -1,6 +1,6 @@
 {
   "name": "creativefactoryrv/google-maps-geocoder",
-  "version": "2.1.3",
+  "version": "3.0.0",
   "description": "Simple and lightweight geocoder that uses the Google Maps Platform API. It can optionally use a PSR cache.",
   "keywords": [
     "Google Maps Platform",
@@ -14,10 +14,20 @@
   "license": "MIT",
   "require": {
     "php": ">=8.0",
-    "psr/cache": "^3.0"
+    "psr/cache": "^3.0",
+    "psr/http-client": "1.*",
+    "psr/http-message": "2.*",
+    "psr/http-factory": "1.*"
   },
   "require-dev": {
-    "symfony/cache": "7.*"
+    "symfony/cache": "7.*",
+    "guzzlehttp/guzzle": "7.*",
+    "guzzlehttp/psr7": "2.*",
+    "php-http/guzzle7-adapter": "2.*"
+  },
+  "suggest": {
+    "guzzlehttp/guzzle": "Provides a PSR-18 client used by default for HTTP requests",
+    "guzzlehttp/psr7": "Provides the PSR-7/PSR-17 factories used by default for HTTP requests"
   },
   "autoload": {
     "psr-4": {
